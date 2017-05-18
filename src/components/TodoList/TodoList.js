@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { deleteTodo } from '../../actions';
 
 const TodoList = ({
   todos,
@@ -21,13 +19,4 @@ const TodoList = ({
   </div>
 );
 
-export default connect(
-  (state) => ({
-    todos: state.getIn(['todo', 'todos'])
-  }),
-  (dispatch) => ({
-    onDeleteTodo: (index) => () => (
-      dispatch(deleteTodo({ index }))
-    )
-  })
-)(TodoList);
+export default TodoList;
